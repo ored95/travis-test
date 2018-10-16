@@ -21,6 +21,8 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include=".travis.yml" />
     <Content Include="requirements.txt" />
     <Content Include="static\css\bootstrap-theme.css" />
     <Content Include="static\css\bootstrap-theme.min.css" />
@@ -36,6 +38,9 @@
   <ItemGroup>
     <Compile Include="manage.py" />
     <Compile Include="myweb\settings.py" />
+    <Compile Include="myweb\tests.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="myweb\urls.py" />
     <Compile Include="myweb\views.py" />
     <Compile Include="myweb\wsgi.py" />
