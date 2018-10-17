@@ -1,2 +1,2 @@
-release: python manage.py migrate && sudo pkill -u postgres && pkill postgres
+release: sudo pkill -u postgres && pkill postgres && python manage.py migrate
 web: python manage.py runserver
