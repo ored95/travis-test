@@ -23,6 +23,8 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include=".travis.yml" />
+    <Content Include="Procfile" />
+    <Content Include="Procfile.windows" />
     <Content Include="requirements.txt" />
     <Content Include="static\css\bootstrap-theme.css" />
     <Content Include="static\css\bootstrap-theme.min.css" />
