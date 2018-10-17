@@ -85,9 +85,7 @@ DATABASES = {
 import dj_database_url
 
 DATABASES = {
-	'default': dj_database_url(
-		default='postgres://tzhkgpbhuhizzm:8838cacf3606359b4192ebf400365cccdafa6519570c885e68385cb02288d4f1@ec2-54-221-225-11.compute-1.amazonaws.com:5432/db1a04n2s98seh'
-	)
+	'default': dj_database_url(default='postgres://tzhkgpbhuhizzm:8838cacf3606359b4192ebf400365cccdafa6519570c885e68385cb02288d4f1@ec2-54-221-225-11.compute-1.amazonaws.com:5432/db1a04n2s98seh')
 }
 
 # Password validation
