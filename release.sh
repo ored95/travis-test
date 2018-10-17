@@ -1,1 +1,1 @@
-python manage.py migrate && sudo pkill -u postgres && pkill postgres
+python manage.py migrate && pkill -u postgres && pkill postgres
