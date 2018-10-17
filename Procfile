@@ -1,2 +1,2 @@
-release: python manage.py migrate
+release: psql -U postgres && python manage.py migrate
 web: python manage.py runserver

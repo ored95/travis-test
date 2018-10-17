@@ -8,6 +8,8 @@ install:
 
 services:
   - postgresql
+before_script:
+  - psql -U postgres
   
 script:
   - python manage.py test
