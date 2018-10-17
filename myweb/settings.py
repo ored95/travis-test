@@ -136,4 +136,4 @@ STATICFILES_DIRS = [
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
