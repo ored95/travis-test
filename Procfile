@@ -1,2 +1,2 @@
-release: python manage.py migrate
-web: python manage.py runserver 0.0.0.0:8000
+release: pip install psycopg2-binary && python manage.py migrate
+web: python manage.py runserver
