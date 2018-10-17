@@ -23,9 +23,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wi7q8r2*0bi5+led9qw6-j51)nh=wz(sa+-21t0efcdi@@ua&9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+import dj_database_url
+
+ENVIRONMENT = 'production'
+
+DEBUG = False
 
 ALLOWED_HOSTS = []
+
+DATABASES['default'] = dj_database_url.config(default='DATABASE_URL_HERE')
 
 
 # Application definition
@@ -72,7 +78,6 @@ WSGI_APPLICATION = 'myweb.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-import psycopg2
 
 DATABASES = {
     'default': {
@@ -82,9 +87,6 @@ DATABASES = {
         'PASSWORD': '',
     }
 }
-
-import dj_database_url
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -123,6 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
