@@ -24,12 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wi7q8r2*0bi5+led9qw6-j51)nh=wz(sa+-21t0efcdi@@ua&9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-import dj_database_url
-
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -83,6 +80,14 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '',
     }
+}
+
+import dj_database_url
+
+DATABASES = {
+	'default': dj_database_url(
+		default='postgres://tzhkgpbhuhizzm:8838cacf3606359b4192ebf400365cccdafa6519570c885e68385cb02288d4f1@ec2-54-221-225-11.compute-1.amazonaws.com:5432/db1a04n2s98seh'
+	)
 }
 
 # Password validation
