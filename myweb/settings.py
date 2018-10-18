@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +27,6 @@ SECRET_KEY = 'wi7q8r2*0bi5+led9qw6-j51)nh=wz(sa+-21t0efcdi@@ua&9'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -72,19 +72,21 @@ WSGI_APPLICATION = 'myweb.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-import psycopg2
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'travis',
         'USER': 'postgres',
-        'PASSWORD': '',
+        'PASSWORD': 'password',
     }
 }
 
-import dj_database_url
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# import dj_database_url
+
+# DATABASES = {
+	# 'default': dj_database_url(default='postgres://tzhkgpbhuhizzm:8838cacf3606359b4192ebf400365cccdafa6519570c885e68385cb02288d4f1@ec2-54-221-225-11.compute-1.amazonaws.com:5432/db1a04n2s98seh')
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -122,7 +124,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -130,3 +136,6 @@ STATICFILES_DIRS = [
 ]
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+# Activate Django-Heroku.
+# django_heroku.settings(locals())

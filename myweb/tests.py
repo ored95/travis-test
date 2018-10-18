@@ -11,7 +11,6 @@ class TestView(TestCase):
         
     def test_LoginView(self):
         resp = self.client.get('/admin/login/?next=/admin/')
-        print(resp)
         self.assertEqual(resp.status_code, 200)
 
     def test_Login(self):
