@@ -1,5 +1,48 @@
 ﻿{% extends 'layout/layout.html' %}
-{% block home %}Home{% endblock %}
-{% block content %}
-<h1>Welcome to Travis-web</h1>
+{% block home %}
+Home
 {% endblock %}
+
+{% block head-body %}
+    <h1>Welcome to Travis-web</h1>
+    <h2>Check 3 numbers can be a Pythagore's triplet?</h2>
+{% endblock %}
+
+{% block input-content %}
+    <legend>Input</legend>
+    <form class="form-input has-success has-error" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="display-name"> X 
+                <span class="warning">*(Allows only numbers)</span> 
+            </label>
+            <input type="number" id="display-name" name="x-value"
+                   step="any" required autofocus placeholder="Eg: 3"/>
+        </div>
+        <div>
+            <label for="display-name"> Y 
+                <span class="warning">*(Allows only numbers)</span> 
+            </label>
+            <input type="number" id="display-name" name="y-value"
+                   step="any" required placeholder="Eg: 4"/>
+        </div>
+        <div>
+            <label for="display-name"> Z
+                <span class="warning">*(Allows only numbers)</span> 
+            </label>
+            <input type="number" id="display-name" name="z-value"
+                   step="any" required placeholder="Eg: 5"/>
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Check it!</button>
+        </div>
+    </form>
+{% endblock %}
+
+{% block output-content %}
+    <legend>Output</legend>
+    <h2 id="result"></h2>
+    <h2>{{ triplet }}</h2>
+{% endblock %}
+

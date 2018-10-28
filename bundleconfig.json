@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "templates/layout/layout.min.html",
+    "inputFiles": [
+      "templates/layout/layout.html"
+    ]
+  }
+]

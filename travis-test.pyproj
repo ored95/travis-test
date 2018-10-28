@@ -23,6 +23,8 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include=".travis.yml" />
+    <Content Include="templates\layout\layout.min.html" />
+    <None Include="bundleconfig.json" />
     <Content Include="Procfile" />
     <Content Include="Procfile.windows" />
     <Content Include="requirements.txt" />
@@ -35,7 +37,9 @@
     <Content Include="static\js\bootstrap.min.js" />
     <Content Include="static\js\npm.js" />
     <Content Include="templates\index.html" />
+    <Content Include="static\js\base.js" />
     <Content Include="templates\layout\layout.html" />
+    <Content Include="static\css\styles.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="manage.py" />
