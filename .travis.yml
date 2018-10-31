@@ -1,0 +1,20 @@
+language: python
+python:
+  - 3.6
+  
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+
+services:
+  - postgresql
+  
+script:
+  - python manage.py test
+ 
+deploy:
+  provider: heroku
+  api_key: 7b2d3396-45bb-4f85-b33a-68e8d09f4d7e
+  app: travis-web
+  on:
+    repo: Oreder/travis-test 
