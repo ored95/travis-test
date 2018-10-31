@@ -35,7 +35,8 @@ Home
         </div>
         <br />
         <div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Check it!</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+            <input type="button" class="btn btn-lg btn-primary btn-block" onclick="getSolution({{ triplet }})" value="Get result" />
         </div>
     </form>
 {% endblock %}
@@ -43,6 +44,5 @@ Home
 {% block output-content %}
     <legend>Output</legend>
     <h2 id="result"></h2>
-    <h2>{{ triplet }}</h2>
 {% endblock %}
 
