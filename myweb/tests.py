@@ -44,7 +44,7 @@ class TestREST(TestCase):
     def test_12(self):
         resp = self.client.post('/', {'x-value': 1, 'y-value': 1, 'z-value': 0})
         self.assertEqual(resp.status_code, 200)
-        self.assertEqual(resp.context['triplet'], "(1, 1, 0)")
+        self.assertEqual(resp.context['triplet'], "(1, 1, 1)")
         self.assertEqual(resp.context['result'], "A Pythagore's triplet")
 
     def test_13(self):
